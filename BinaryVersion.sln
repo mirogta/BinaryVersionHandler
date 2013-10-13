@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryVersion.SampleWeb", "BinaryVersion.SampleWeb\BinaryVersion.SampleWeb.csproj", "{E04FBC77-8600-4ADE-A7C8-AA319CFFDE2A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1CBA6675-82CB-4598-8AFC-8FD321599179} = {1CBA6675-82CB-4598-8AFC-8FD321599179}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryVersion.Handler", "BinaryVersion.Handler\BinaryVersion.Handler.csproj", "{1CBA6675-82CB-4598-8AFC-8FD321599179}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F2C93EE7-6B3B-457C-B987-487B6BFCA113}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E04FBC77-8600-4ADE-A7C8-AA319CFFDE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04FBC77-8600-4ADE-A7C8-AA319CFFDE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04FBC77-8600-4ADE-A7C8-AA319CFFDE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04FBC77-8600-4ADE-A7C8-AA319CFFDE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBA6675-82CB-4598-8AFC-8FD321599179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBA6675-82CB-4598-8AFC-8FD321599179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBA6675-82CB-4598-8AFC-8FD321599179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBA6675-82CB-4598-8AFC-8FD321599179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
