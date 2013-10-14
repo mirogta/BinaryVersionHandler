@@ -13,6 +13,7 @@ namespace BinaryVersion.Handler.Model
         #region [ Propreties ]
 
         public string CompanyName { get; set; }
+        public string OriginalFilename { get; set; }
         public string ProductName { get; set; }
         public string ProductVersion { get; set; }
         public string Comments { get; set; }
@@ -40,6 +41,7 @@ namespace BinaryVersion.Handler.Model
         {
             // I didn't want to add dependency on e.g. AutoMapper, keep it simple for now
             this.CompanyName = fileVersionInfo.CompanyName;
+            this.OriginalFilename = fileVersionInfo.OriginalFilename;
             this.ProductName = fileVersionInfo.ProductName;
             this.ProductVersion = fileVersionInfo.ProductVersion;
             this.FileName = fileVersionInfo.FileName;
