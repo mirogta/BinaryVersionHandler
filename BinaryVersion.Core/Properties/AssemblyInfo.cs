@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Binary Version Handler")]
+[assembly: AssemblyTitle("BinaryVersion.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Miroslav Sommer")]
-[assembly: AssemblyProduct("BinaryVersion.Handler")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("BinaryVersion.Core")]
+[assembly: AssemblyCopyright("Copyright © 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,12 +20,12 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1ace0a06-0e5d-4f29-b5ec-a4501c4815b6")]
+[assembly: Guid("f042a84c-912f-4b28-9d2b-043bf3782194")]
 
-// FileVersion information for an assembly consists of the following four values:
+// Version information for an assembly consists of the following four values:
 //
-//      Major FileVersion
-//      Minor FileVersion 
+//      Major Version
+//      Minor Version 
 //      Build Number
 //      Revision
 //

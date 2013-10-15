@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
-using BinaryVersion.Handler.Model;
+using BinaryVersion.Core.Model;
+using BinaryVersion.Core.Response;
 using BinaryVersion.Handler.Response;
 
 namespace BinaryVersion.Handler
@@ -24,10 +25,16 @@ namespace BinaryVersion.Handler
             var applicationInformation = GetApplicationInformation(filter);
 
             // create response handler based on the extension, e.g. .xml or .json
-            var responseHandler = ResponseHandlerFactory.CreateResponseHandler(context.Request.CurrentExecutionFilePathExtension, context.Response);
+            // NOTE:
+            // I have started with context.Request.CurrentExecutionFilePathExtension which returns just the extension, e.g. .xml or .json,
+            // so that the filename would be controlled from the web.config, but because that property is only available in .NET 4.0 and higher
+            // and I want to make the library work in .NET 3.5 and 2.0, I need to use another property which is available in older frameworks
+            var requestPath = context.Request.CurrentExecutionFilePath;
+            var responseHandler = ResponseHandlerFactory.CreateResponseHandler<ApplicationInformation>(requestPath.Substring(requestPath.LastIndexOf(".")));
 
             // write the information to the response using appropriate response handler
-            responseHandler.Write(applicationInformation);
+            context.Response.ContentType = responseHandler.ContentType;
+            responseHandler.Serialize(context.Response.OutputStream, applicationInformation);
 
             // response output caching
             AddFileDependencyCache(context.Response, applicationInformation.Versions);
@@ -48,7 +55,13 @@ namespace BinaryVersion.Handler
             EnableCaching(response.Cache);
 
             // Add file dependency cache
-            versions.AsParallel().Where(FilterFileVersionInfo.CanCache).ForAll(v => response.AddFileDependency(v.FileName));
+            foreach (var fileVersion in versions)
+            {
+                if (FilterFileVersionInfo.CanCache(fileVersion))
+                {
+                    response.AddFileDependency(fileVersion.GetFileName());
+                }
+            }
         }
 
         private static void EnableCaching(HttpCachePolicy cache)

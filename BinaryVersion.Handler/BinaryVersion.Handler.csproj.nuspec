@@ -13,8 +13,9 @@
     <releaseNotes>Initial version</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>#binary #version #handler</tags>
-    <dependencies>
-      <dependency id="SampleDependency" version="1.0" />
-    </dependencies>
   </metadata>
+	<files>
+		<file src="bin\release\v3.5\*.*" target="lib\net35" />
+		<file src="bin\release\v4.0\*.*" target="lib\net40" />
+	</files>
 </package>
