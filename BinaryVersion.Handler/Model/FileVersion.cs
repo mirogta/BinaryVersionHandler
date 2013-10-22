@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace BinaryVersion.Core.Model
+namespace BinaryVersion.Handler.Model
 {
     /// <summary>
     /// FileVersion represents a ligher type similar to <see cref="System.Diagnostics.FileVersionInfo"/> used for serializing only some of the properties.

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using BinaryVersion.Core.Model;
+using BinaryVersion.Handler.Model;
 
-namespace BinaryVersion.Core.Response
+namespace BinaryVersion.Handler.Response
 {
     /// <summary>
     /// Generic response handler

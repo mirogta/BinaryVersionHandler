@@ -1,8 +1,8 @@
 ﻿using System.IO;
-using BinaryVersion.Core.Model;
+using BinaryVersion.Handler.Model;
 using System;
 
-namespace BinaryVersion.Core.Response
+namespace BinaryVersion.Handler.Response
 {
     /// <summary>
     /// Interface for response handlers.

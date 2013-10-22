@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Web;
-using BinaryVersion.Core.Model;
-using BinaryVersion.Core.Response;
+using BinaryVersion.Handler.Model;
 using BinaryVersion.Handler.Response;
 
 namespace BinaryVersion.Handler
@@ -77,7 +75,7 @@ namespace BinaryVersion.Handler
             {
                 ComputerName = Environment.MachineName,
                 ServerName = HttpContext.Current.Request.ServerVariables["SERVER_NAME"],
-                Versions = GetVersions(filterFileVersionInfo).ToList()
+                Versions = new List<FileVersion>(GetVersions(filterFileVersionInfo))
             };
         }
 
@@ -88,7 +86,7 @@ namespace BinaryVersion.Handler
                 FileVersionInfo fileVersion = null;
                 try
                 {
-                     fileVersion = FileVersionInfo.GetVersionInfo(assembly.Location);
+                    fileVersion = FileVersionInfo.GetVersionInfo(assembly.Location);
                 }
                 catch (NotSupportedException)
                 {

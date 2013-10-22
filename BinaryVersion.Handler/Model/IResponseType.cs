@@ -1,4 +1,4 @@
-﻿namespace BinaryVersion.Core.Model
+﻿namespace BinaryVersion.Handler.Model
 {
     /// <summary>
     /// Interface for response types.

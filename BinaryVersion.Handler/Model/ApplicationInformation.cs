@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BinaryVersion.Core.Model
+namespace BinaryVersion.Handler.Model
 {
     /// <summary>
     /// ApplicationInformation contains basic information about the running application (that is currently in my interest).

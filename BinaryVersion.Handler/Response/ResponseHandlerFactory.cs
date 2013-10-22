@@ -2,10 +2,9 @@
 using System.Web;
 using System.Xml.Serialization;
 using System.IO;
-using System.Runtime.Serialization.Json;
-//using System.Web.Script.Serialization;
-using BinaryVersion.Core.Model;
-using BinaryVersion.Core.Response;
+using Newtonsoft.Json;
+using BinaryVersion.Handler.Model;
+using BinaryVersion.Handler.Response;
 
 namespace BinaryVersion.Handler.Response
 {
@@ -23,9 +22,7 @@ namespace BinaryVersion.Handler.Response
                     return new ResponseHandler
                     {
                         ContentType = "application/json",
-                        Serialize = (stream, obj) => new DataContractJsonSerializer(typeof(T)).WriteObject(stream, obj)
-                        // .NET 3.5:
-                        //Serialize = (stream, obj) => (new StreamWriter(stream)).Write(new JavaScriptSerializer().Serialize(obj))
+                        Serialize = (stream, obj) => (new StreamWriter(stream)).Write(JsonConvert.SerializeObject(obj))
                     };
                 case ".xml":
                     return new ResponseHandler

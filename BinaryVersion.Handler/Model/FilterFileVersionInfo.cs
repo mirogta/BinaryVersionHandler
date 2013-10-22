@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace BinaryVersion.Core.Model
+namespace BinaryVersion.Handler.Model
 {
     public class FilterFileVersionInfo
     {
