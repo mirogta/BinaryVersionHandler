@@ -10,13 +10,16 @@ namespace BinaryVersion.Handler.Model
     {
         #region [ Propreties ]
 
-        public string OriginalFilename { get; set; }
-        public string CompanyName { get; set; }
+        public string InternalName { get; set; }
+        public string FileDescription { get; set; }
         public string ProductName { get; set; }
         public string ProductVersion { get; set; }
-        public string Comments { get; set; }
+        public string CompanyName { get; set; }
         public string LegalCopyright { get; set; }
         public string LegalTrademarks { get; set; }
+        public string Language { get; set; }
+        public string Comments { get; set; }
+        public string OriginalFilename { get; set; }
 
         /// <summary>
         /// Full path of the binary file.
@@ -42,14 +45,17 @@ namespace BinaryVersion.Handler.Model
         public FileVersion(FileVersionInfo fileVersionInfo)
         {
             // I didn't want to add dependency on e.g. AutoMapper, keep it simple for now
-            this.OriginalFilename = fileVersionInfo.OriginalFilename;
-            this.CompanyName = fileVersionInfo.CompanyName;
-            this.ProductName = fileVersionInfo.ProductName;
-            this.ProductVersion = fileVersionInfo.ProductVersion;
-            this.FileName = fileVersionInfo.FileName;
             this.Comments = fileVersionInfo.Comments;
+            this.CompanyName = fileVersionInfo.CompanyName;
+            this.FileDescription = fileVersionInfo.FileDescription;
+            this.FileName = fileVersionInfo.FileName;
+            this.InternalName = fileVersionInfo.InternalName;
             this.LegalCopyright = fileVersionInfo.LegalCopyright;
             this.LegalTrademarks = fileVersionInfo.LegalTrademarks;
+            this.Language = fileVersionInfo.Language;
+            this.OriginalFilename = fileVersionInfo.OriginalFilename;
+            this.ProductName = fileVersionInfo.ProductName;
+            this.ProductVersion = fileVersionInfo.ProductVersion;
         }
 
         #endregion

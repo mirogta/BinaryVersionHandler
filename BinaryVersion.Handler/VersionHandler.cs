@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Web;
 using BinaryVersion.Handler.Model;
 using BinaryVersion.Handler.Response;
+using System.Web.Hosting;
 
 namespace BinaryVersion.Handler
 {
@@ -75,6 +76,8 @@ namespace BinaryVersion.Handler
             {
                 ComputerName = Environment.MachineName,
                 ServerName = HttpContext.Current.Request.ServerVariables["SERVER_NAME"],
+                WebsiteName = HostingEnvironment.SiteName,
+                CLRVersion = Environment.Version.ToString(),
                 Versions = new List<FileVersion>(GetVersions(filterFileVersionInfo))
             };
         }
@@ -91,6 +94,11 @@ namespace BinaryVersion.Handler
                 catch (NotSupportedException)
                 {
                     // System.NotSupportedException: The invoked member is not supported in a dynamic assembly.
+                    continue;
+                }
+                catch(ArgumentException)
+                {
+                    // System.ArgumentException: The path is not of a legal form.
                     continue;
                 }
 

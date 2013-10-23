@@ -20,6 +20,16 @@ namespace BinaryVersion.Handler.Model
         public string ServerName { get; set; }
 
         /// <summary>
+        /// Website name as returned by a HostingEnvironment.
+        /// </summary>
+        public string WebsiteName { get; set; }
+
+        /// <summary>
+        /// CLR version as returned by environment.
+        /// </summary>
+        public string CLRVersion { get; set; }
+
+        /// <summary>
         /// List of versions of binaries with related information.
         /// </summary>
         public List<FileVersion> Versions { get; set; }
