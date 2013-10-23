@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BinaryVersion.Handler Sample Website</title>
+</head>
+<body>
+
+    <header>
+        <h1>BinaryVersion.Handler Sample Website</h1>
+    </header>
+
+    <article>
+        C# HttpHandler which shows versions of binaries used by currently running ASP.NET application
+    </article>
+
+    <article>
+        <p>
+            Add this to your web.config to enable the BinaryVersion.Handler.
+        </p>
+        <p>
+            <pre>
+    &lt;system.webserver&gt;
+        &lt;handlers&gt;
+            &lt;remove name="version_xml" /&gt;
+            &lt;remove name="version_json" /&gt;
+            &lt;add name="version_xml" verb="*" path="version.xml" type="BinaryVersion.Handler.VersionHandler, BinaryVersion.Handler" /&gt;
+            &lt;add name="version_json" verb="*" path="version.json" type="BinaryVersion.Handler.VersionHandler, BinaryVersion.Handler" /&gt;
+        &lt;/handlers&gt;
+    &lt;/system.webserver&gt;
+            </pre>
+        </p>
+        <p>
+            See <a href="http://www.iis.net/configreference/system.webserver/handlers">http://www.iis.net/configreference/system.webserver/handlers</a> for more information about handlers.
+        </p>
+    </article>
+
+    <article>
+        <p>
+            Click on the links to see the results:
+        </p>
+        <ul>
+            <li><a href="/version.xml">version.xml</a></li>
+            <li><a href="/version.xml/all">version.xml/all</a></li>
+            <li><a href="/version.json">version.json</a></li>
+        </ul>
+    </article>
+</body>
+</html>
